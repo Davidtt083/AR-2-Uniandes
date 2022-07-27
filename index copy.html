@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>AR - UniAndes</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="gesture-detector.js"></script>
+  <script src="gesture-handler.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.1/dist/aframe-extras.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="styles\styles.css">
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/c4b7d7f020.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+<script>
+  AFRAME.registerComponent('markerhandler', {
+
+
+    init: function () {
+      let toggle = false
+      const bot_01 = document.querySelector("#bot_01");
+
+      bot_01.addEventListener('click', function () {
+        console.log("click event on #animated-marker fired")
+
+        const element = document.querySelector("#cam_01-model");
+        element.setAttribute('visible', false);
+      })
+
+
+    }
+  })
+</script>
+
+
+
+<!-- <script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>-->
+
+
+
+
+<style>
+  .buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+  }
+
+  .say-hi-button {
+    padding: 0.25em;
+    border-radius: 4px;
+    border: none;
+    background: white;
+    color: black;
+    width: 10em;
+    height: 2em;
+  }
+
+  .a-loader-title {
+    color: rgb(66, 90, 246);
+  }
+
+  #fullh {
+    position: fixed;
+
+    align-items: center;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 9999;
+    text-align: center;
+
+  }
+  .hide{
+    display: none;
+    position: absolute;  
+    left: -999999px;
+    visibility: hidden;
+  }
+</style>
+<script>
+  function comenzar() {
+    var h = document.getElementById("fullh");
+    h.classList.remove("d-flex");
+    h.style.display = "none";
+  }
+
+</script>
+
+<script>
+  setTimeout(() => {
+    const box = document.getElementById('com');
+
+    // 👇️ removes element from DOM
+    box.style.display = 'inline';
+
+    // 👇️ hides element (still takes up space on page)
+    // box.style.visibility = 'hidden';
+  }, 8000); // 👈️ time in milliseconds
+</script>
+
+<body>
+
+
+
+
+  <!--<div class="full-height d-flex justify-content-center" id="fullh">
+    <div class="card text-center" style="width: 18rem;">
+      <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_ttfwgpt1.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+  <div class="card-body">
+  <a href="#" class="btn btn-primary" id="com"onclick="comenzar()" style="display: none;">¡Comenzar!</a>
+  </div>
+</div>
+   </div>-->
+
+
+
+
+  <div class="container"
+    style="bottom: 0; display: flex; position: absolute; justify-content: center; z-index: 20; align-items: center; left: 0;">
+    <div class="col-sm" id="bs0">
+      <div class="buttons">
+        <button onclick="play()" id="show-hide-entity" class="say-hi-button"><i
+            class="fa-solid fa-volume-high"></i>&nbsp Agilidad</button><br><br>
+      </div>
+    </div>
+
+    <div class="col-sm" id="bs">
+      <div class="buttons" >
+        <button onclick="siguiente()" id="show-hide-entity-2" class="say-hi-button2">Siguiente &nbsp<i
+            class="fa-solid fa-circle-arrow-right"></i></button><br><br>
+      </div>
+    </div>
+
+      <div class="hide" id="bs-2">
+        <div class="buttons">
+          <button onclick="play()" id="show-hide-entity" class="say-hi-button"><i
+              class="fa-solid fa-volume-high"></i>&nbsp TI a la mano
+            </button><br><br>
+        </div>
+      </div>
+      
+      <div class="hide" id="bs-3">
+        <div class="buttons" id="bs">
+          <button onclick="siguiente2()" id="show-hide-entity-2" class="say-hi-button3">Siguiente 2 &nbsp<i
+              class="fa-solid fa-circle-arrow-right"></i></button><br><br>
+        </div>
+      </div>
+
+      <div class="hide" id="bs-4">
+        <div class="buttons">
+          <button onclick="play()" id="show-hide-entity" class="say-hi-button"><i
+              class="fa-solid fa-volume-high"></i>&nbsp Nuevo modelo comercial
+            </button><br><br>
+        </div>
+      </div>
+      
+      <div class="hide" id="bs-5">
+        <div class="buttons" id="bs">
+          <button onclick="siguiente2()" id="show-hide-entity-2" class="say-hi-button2">Siguiente 3 &nbsp<i
+              class="fa-solid fa-circle-arrow-right"></i></button><br><br>
+        </div>
+      </div>
+
+    </div>
+
+
+   
+   
+
+    
+    <audio id="audio" src="audio\Agilidad.wav"></audio>
+    <audio id="audio2" src="audio\CamarasTermicas.mp3"></audio>
+    <audio id="audio3" src="audio\CamarasTermicas.mp3"></audio>
+  </div>
+
+  <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector
+    id="scene" loading-screen="dotsColor: red; backgroundColor: black">
+    <a-assets>
+      <a-asset-item id="bowser" src="models\escenario\almacen.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="monos_01" src="models\monos_01.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="mono_02" src="models\mono_termico.glb">
+      </a-asset-item>
+
+
+
+
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="cam_01" src="models\Camara_IMHUD_01.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="cam_02" src="models\Camara_IMHUD_02.glb">
+      </a-asset-item>
+    </a-assets>
+
+
+    <a-assets>
+      <a-asset-item id="mono-01" src="models\mono-01.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="mono-02" src="models\mono-02.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="mono-03" src="models\mono-03.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="oficina-01" src="models\oficina-01.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="mono-04" src="models\mono-04.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-assets>
+      <a-asset-item id="mono-disp" src="models\mono-dispositivo.glb">
+      </a-asset-item>
+    </a-assets>
+
+    <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"
+      id="markerA">
+
+      <a-entity light="type: ambient; color: #CCC; intensity: 1"></a-entity>
+      <a-entity light="type: point; intensity: 0.2; distance: 70; decay: 5" position="-2 0.5 0"></a-entity>
+      <a-entity light="type: point; intensity: 0.2; distance: 70; decay: 5" position="0 0.5 0"></a-entity>
+      <a-entity light="type: point; intensity: 0.2; distance: 70; decay: 5" position="2 0.5 0"></a-entity>
+
+      <a-entity id="bowser-model" gltf-model="#bowser" position="0 0 0" scale="0.4 0.4 0.4" class="clickable"
+        gesture-handler visible="true">
+      </a-entity>
+
+
+      <a-entity id="m-mono-01" gltf-model="#mono-01" position="0 0 0" scale=".4 .4 .4" class="clickable" gesture-handler
+        visible="true" animation-mixer>
+      </a-entity>
+
+      <a-entity id="m-mono-02" gltf-model="#mono-02" position="0 0 0" scale=".4 .4 .4" class="clickable" gesture-handler
+        visible="true" animation-mixer>
+      </a-entity>
+
+      <a-entity id="m-mono-03" gltf-model="#mono-03" position="0 0 0" scale=".4 .4 .4" class="clickable" gesture-handler
+        visible="true" animation-mixer>
+      </a-entity>
+
+      <a-entity id="mode-oficina-01" gltf-model="#oficina-01" position="0 0 0" scale=".4 .4 .4" class="clickable"
+        gesture-handler visible="false">
+      </a-entity>
+
+      <a-entity id="m-mono-04" gltf-model="#mono-04" position="0 0 0" scale=".4 .4 .4" class="clickable" gesture-handler
+        visible="false" animation-mixer>
+      </a-entity>
+
+      <a-entity id="m-mono-disp" gltf-model="#mono-disp" position="0 0 0" scale=".4 .4 .4" class="clickable" gesture-handler
+        visible="false" animation-mixer>
+      </a-entity>
+
+
+      <a-entity id="monos_02-model" gltf-model="#mono_02" position="0 0 0" scale=".05  .05 .05" class="clickable"
+        gesture-handler visible="false" material="emissiveIntensity:15;" animation-mixer>
+      </a-entity>
+
+
+      <a-entity id="cam_01-model" gltf-model="#cam_01" position="0 0 0" scale=".05  .05 .05" class="clickable"
+        gesture-handler visible="false" animation-mixer material="emissiveIntensity:15;">
+      </a-entity>
+
+      <a-entity id="cam_02-model" gltf-model="#cam_02" position="0 0 0" scale="0.05 0.05 0.05" class="clickable"
+        gesture-handler visible="false" animation-mixer material="emissiveIntensity:15;">
+      </a-entity>
+
+
+
+
+
+
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+
+
+
+
+
+
+
+
+
+  <script>
+    window.onload = function () {
+      document
+        .querySelector(".say-hi-button")
+        .addEventListener("click", function () {
+          const element = document.querySelector("#cam_01-model");
+          const element2 = document.querySelector("#cam_02-model");
+          const element3 = document.querySelector("#monos_01-model");
+          const element4 = document.querySelector("#monos_02-model");
+          if (element.object3D.visible === false) {
+
+            element.object3D.visible = true;
+
+          } else {
+
+            element.object3D.visible = false;
+          }
+
+
+          if (element3.object3D.visible === false) {
+
+            element3.object3D.visible = true;
+
+          } else {
+
+            element3.object3D.visible = false;
+          }
+
+          if (element2.object3D.visible === true) {
+
+            element2.object3D.visible = false;
+
+          }
+
+          if (element4.object3D.visible === true) {
+
+            element4.object3D.visible = false;
+
+          }
+
+        });
+
+
+
+      document
+        .querySelector(".say-hi-button2")
+        .addEventListener("click", function () {
+          const element = document.querySelector("#bowser-model");
+          const element2 = document.querySelector("#mode-oficina-01");
+          const element3 = document.querySelector("#m-mono-01");
+          const element4 = document.querySelector("#m-mono-02");
+          const element5 = document.querySelector("#m-mono-03");
+          const element6 = document.querySelector("#m-mono-04");
+          if (element.object3D.visible === true) {
+
+            element2.object3D.visible = true;
+            element6.object3D.visible = true;
+            element.object3D.visible = false;
+            element3.object3D.visible = false;
+            element4.object3D.visible = false;
+            element5.object3D.visible = false;
+          }
+        });
+
+
+        document
+        .querySelector(".say-hi-button3")
+        .addEventListener("click", function () {
+          const element = document.querySelector("#mode-oficina-01");
+          const element2 = document.querySelector("#m-mono-04");
+          const element3 = document.querySelector("#m-mono-disp");
+    
+          if (element.object3D.visible === true) {
+
+            element3.object3D.visible = true;
+            element.object3D.visible = false;
+            element3.object3D.visible = false;
+            
+          }
+        });
+    };
+  </script>
+
+
+  <script>
+    function play() {
+      var audio = document.getElementById("audio");
+      if (audio.paused)
+        audio.play();
+      else
+        audio.pause();
+      var audioh1 = document.getElementById("audio2");
+      if (audioh1.play)
+        audioh1.pause();
+    }
+  </script>
+  <script>
+    function siguiente(){     
+      var e = document.getElementById("bs0");
+      var f = document.getElementById("bs"); 
+      var g = document.getElementById("bs-2");
+      var h = document.getElementById("bs-3");      
+          e.style.display = 'none';  
+          f.style.display = 'none'; 
+          g.classList.remove('hide'); 
+          g.classList.add('col-sm'); 
+          h.classList.remove('hide'); 
+          h.classList.add('col-sm');     
+      
+    }
+  </script>
+
+<script>
+  function siguiente2(){     
+    var e = document.getElementById("bs-2");
+    var f = document.getElementById("bs-3"); 
+    var g = document.getElementById("bs-4");
+    var h = document.getElementById("bs-5");      
+        e.style.display = 'none';  
+        f.style.display = 'none'; 
+        g.classList.remove('hide'); 
+        g.classList.add('col-sm'); 
+        h.classList.remove('hide'); 
+        h.classList.add('col-sm');     
+    
+  }
+</script>
+
+</body>
+
+</html>

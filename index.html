@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="styles\styles.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/c4b7d7f020.js" crossorigin="anonymous"></script>
 
   </head>
 
@@ -133,55 +134,24 @@ setTimeout(() => {
 </div>
    </div>-->
 
-<div  class="container" style="top: 10px; display: flex; position: absolute; justify-content: center; z-index: 20; align-items: center; left: 0;">
-  <div class="row">
-    <div id="myDIV" class="col-sm" style="display: none;">
-       <div class="card" style="width: 18rem; background-color: rgba(127, 191, 247, 0.4);">
-        <div class="card-body">
-          <h5 class="card-title">Cámaras</h5>
-          <h6 class="card-subtitle mb-2 text-muted"></h6>
-          <p class="card-text">•Permiten ver el comportamiento de las personas que están trabajando.
-            <br> •	Identifican si los colaboradores se encuentran dentro de su área de trabajo.
-            <br> •	Observan si existe saturación de personas en un lugar o si se está cumpliendo con las normas de distanciamiento.
-            <br> •	Verifican que los colaboradores porten el equipo de seguridad de manera correcta y con todos los elementos completos 
-            </p>
-         
-        </div>
-      </div>
-    </div>
-    <div id="myDIV2" class="col-sm" style="display: none;">
-      <div class="card" style="width: 18rem; background-color: rgba(127, 191, 247, 0.4);">
-        <div class="card-body" style="max-height: 400px; overflow-y: auto">
-          <h5 class="card-title">Cámaras térmicas</h5>
-          <h6 class="card-subtitle mb-2 text-muted"></h6>
-          <p class="card-text">
-            •	Detectan si los colaboradores cuentan con una temperatura corporal adecuada
-            <br>•	Localizan de manera oportuna a las personas que presentan posibles síntomas de enfermedad por una temperatura elevada.
-            <br>•	Verifican si el equipo de protección que usa el colaborador cuenta con una temperatura adecuada o de lo contrario alerta para que el colaborador no sufra accidentes.  
-            <br>Con estos dispositivos tecnológicos conectados entre sí, es posible que cada vez que se detecte alguna eventualidad o comportamiento fuera de lo permitido, se reporte automáticamente el incidente a las personas encargadas del monitoreo, que se emitan alertas sonoras o bien, que se le envíen notificaciones directamente a la persona que está infringiendo con alguna norma.
-            </p>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
      
 <div  class="container" style="bottom: 0; display: flex; position: absolute; justify-content: center; z-index: 20; align-items: center; left: 0;">
   <div class="col-sm">  
   <div class="buttons">
-         <button onclick="play()" id="show-hide-entity" class="say-hi-button">Cámaras</button><br><br>
+         <button onclick="play()" id="show-hide-entity" class="say-hi-button"><i class="fa-solid fa-volume-high"></i>&nbsp Agilidad</button><br><br>
        </div>
   </div>
   
   <div class="col-sm">
        <div class="buttons">
-        <button onclick="play2()" id="show-hide-entity" class="say-hi-button2">Cámaras térmicas</button><br><br>
+        <button onclick="play2()" id="show-hide-entity" class="say-hi-button2">Siguiente &nbsp<i class="fa-solid fa-circle-arrow-right"></i></button><br><br>
       </div>
   </div>
-       <audio id="audio" src="audio\Camaras.mp3"></audio>
+       <audio id="audio" src="audio\Agilidad.wav"></audio>
        <audio id="audio2" src="audio\CamarasTermicas.mp3"></audio>
+       <audio id="audio3" src="audio\CamarasTermicas.mp3"></audio>
 </div>
 
     <a-scene
@@ -215,6 +185,7 @@ setTimeout(() => {
           src="models\mono_termico.glb"
         >
         </a-asset-item>
+        
 
        
 
@@ -249,6 +220,14 @@ setTimeout(() => {
         <a-asset-item
           id="mono-02"
           src="models\mono-02.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+
+      <a-assets>
+        <a-asset-item
+          id="mono-03"
+          src="models\mono-03.glb"
         >
         </a-asset-item>
       </a-assets>
@@ -305,6 +284,18 @@ setTimeout(() => {
     animation-mixer       
   >
   </a-entity>
+
+  <a-entity
+  id="mono-03"
+  gltf-model="#mono-03"
+  position="0 0 0"
+  scale=".4 .4 .4"
+  class="clickable"
+  gesture-handler
+  visible="true" 
+  animation-mixer       
+>
+</a-entity>
 
          
     <a-entity
