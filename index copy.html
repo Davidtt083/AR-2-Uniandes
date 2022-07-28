@@ -19,15 +19,6 @@
   <link rel="stylesheet" href="styles\styles.css">
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://kit.fontawesome.com/c4b7d7f020.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
 
 </head>
 
@@ -81,19 +72,6 @@
     z-index: 30;
   }
 
-  .buttons-modal {
-    position: absolute;
-    top: 50px;
-    left: 10px;
-    width: 20%;
-    height: auto;
-    max-height: 6rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 30;
-  }
-
   .say-hi-button {
     padding: 0.25em;
     border-radius: 4px;
@@ -122,10 +100,9 @@
     text-align: center;
 
   }
-
-  .hide {
+  .hide{
     display: none;
-    position: absolute;
+    position: absolute;  
     left: -999999px;
     visibility: hidden;
   }
@@ -156,119 +133,14 @@
 
 
 
-  <div class="full-height d-flex justify-content-center" id="fullh">
+  <!--<div class="full-height d-flex justify-content-center" id="fullh">
     <div class="card text-center" style="width: 18rem;">
       <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_ttfwgpt1.json" background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
   <div class="card-body">
   <a href="#" class="btn btn-primary" id="com"onclick="comenzar()" style="display: none;">¡Comenzar!</a>
   </div>
 </div>
-   </div>
-
-  <!--Sección de modal-->
-  <!-- Button trigger modal -->
-  <button type="button" id="b-modal-01" class="buttons-modal" data-toggle="modal" data-target="#exampleModal">
-    <i class="fa-solid fa-eye"></i> Leer texto
-  </button><br>
-
-  <button type="button" id="b-modal-02" class="hide" data-toggle="modal" data-target="#exampleModal-2">
-    <i class="fa-solid fa-eye"></i> Leer texto
-  </button>
-
-  <button type="button" id="b-modal-03" class="hide" data-toggle="modal" data-target="#exampleModal-3">
-    <i class="fa-solid fa-eye"></i> Leer texto
-  </button>
-
-  <!-- Modal 1 -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Agilidad</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Parte de la estrategia de “Los tres elefantes” consistió en implementar una solución rápida y ágil.
-          Comenzaron a innovar digitalmente con los recursos que ya tenían a su alcance, es decir, no crearon nuevas
-          herramientas ni desarrollaron tecnología especifica para cubrir la necesidad que se suscito en ese momento.
-          Por el contrario, se apropiaron de tecnología existente como WhatsApp y utilizaron uno de los recursos más
-          importantes con los que contaban: las vendedoras de la tienda que además conocen el almacén y los productos
-          que se venden. Es por eso que su implementación ágil consistió en que las vendedoras se comunicaran con los
-          clientes por video llamada de whatsapp mientras mostraban los productos del almacén, hasta que el cliente
-          eligiera lo que quería comprar.
-          
-        </div>
-        
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal 1 -->
-
-  <!-- Modal 2 -->
-  <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">TI a la mano
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <picture>
-            <source srcset="imagenes\Pantalla-1.png" type="image/svg+xml">
-            <img src="imagenes\Pantalla-1.png" class="img-fluid img-thumbnail" alt="...">
-          </picture>
-          La principal forma de comunicación con los clientes es mediante herramientas online, principalmente a través
-          de WhatsApp. Adicional a este medio de comunicación, se crea una página web muy sencilla en donde el único
-          contenido es un breve catálogo de productos y el número telefónico para que se comuniquen al almacén y
-          realicen sus compras por videollamada, teniendo la opción de recoger su pedido en tienda o que se les envíe a
-          su domicilio. </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal 2 -->
-
-    <!-- Modal 3 -->
-    <div class="modal fade" id="exampleModal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Nuevo modelo comercial
-          </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <picture>
-            <source srcset="imagenes\Pantalla-2.png" type="image/svg+xml">
-            <img src="imagenes\Pantalla-2.png" class="img-fluid img-thumbnail" alt="...">
-          </picture>
-          Mientras está en marcha la solución con los clientes, en “Los tres elefantes” se está creando un nuevo modelo comercial que responde a las nuevas necesidades de los clientes.
-El nuevo modelo de negocio consistió en crear la versión de negocio digital que cuenta con más de 15,000 productos en línea, con oportunidad de que el cliente compre y pague directamente en la plataforma; teniendo ahora una plataforma ecommerce y una mayor cercanía y mejor relación con los clientes que prefieren acudir de manera presencial a las tiendas físicas.
- </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal 3 -->
-
-  <!--Sección de modal-->
+   </div>-->
 
 
 
@@ -283,51 +155,52 @@ El nuevo modelo de negocio consistió en crear la versión de negocio digital qu
     </div>
 
     <div class="col-sm" id="bs">
-      <div class="buttons">
+      <div class="buttons" >
         <button onclick="siguiente()" id="show-hide-entity-2" class="say-hi-button2">Siguiente &nbsp<i
             class="fa-solid fa-circle-arrow-right"></i></button><br><br>
       </div>
     </div>
 
-    <div class="hide" id="bs-2">
-      <div class="buttons">
-        <button onclick="play2()" id="show-hide-entity" class="say-hi-button"><i
-            class="fa-solid fa-volume-high"></i>&nbsp TI a la mano
-        </button><br><br>
+      <div class="hide" id="bs-2">
+        <div class="buttons">
+          <button onclick="play()" id="show-hide-entity" class="say-hi-button"><i
+              class="fa-solid fa-volume-high"></i>&nbsp TI a la mano
+            </button><br><br>
+        </div>
       </div>
+      
+      <div class="hide" id="bs-3">
+        <div class="buttons" id="bs">
+          <button onclick="siguiente2()" id="show-hide-entity-2" class="say-hi-button3">Siguiente 2 &nbsp<i
+              class="fa-solid fa-circle-arrow-right"></i></button><br><br>
+        </div>
+      </div>
+
+      <div class="hide" id="bs-4">
+        <div class="buttons">
+          <button onclick="play()" id="show-hide-entity" class="say-hi-button"><i
+              class="fa-solid fa-volume-high"></i>&nbsp Nuevo modelo comercial
+            </button><br><br>
+        </div>
+      </div>
+      
+      <div class="hide" id="bs-5">
+        <div class="buttons" id="bs">
+          <button onclick="siguiente2()" id="show-hide-entity-2" class="say-hi-button2">Siguiente 3 &nbsp<i
+              class="fa-solid fa-circle-arrow-right"></i></button><br><br>
+        </div>
+      </div>
+
     </div>
 
-    <div class="hide" id="bs-3">
-      <div class="buttons" id="bs">
-        <button onclick="siguiente2()" id="show-hide-entity-2" class="say-hi-button3">Siguiente &nbsp<i
-            class="fa-solid fa-circle-arrow-right"></i></button><br><br>
-      </div>
-    </div>
 
-    <div class="hide" id="bs-4">
-      <div class="buttons">
-        <button onclick="play3()" id="show-hide-entity" class="say-hi-button"><i
-            class="fa-solid fa-volume-high"></i>&nbsp Nuevo modelo comercial
-        </button><br><br>
-      </div>
-    </div>
+   
+   
 
-    <div class="hide" id="bs-5">
-      <div class="buttons" id="bs">
-        <button onclick="cerrar()" id="show-hide-entity-2" class="say-hi-button2">Cerrar &nbsp<i class="fa-solid fa-xmark"></i></button><br><br>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-
-  <audio id="audio" src="audio\Agilidad.wav"></audio>
-  <audio id="audio2" src="audio\TI a la mano.wav"></audio>
-  <audio id="audio3" src="audio\nuevo modelo comercial.wav"></audio>
+    
+    <audio id="audio" src="audio\Agilidad.wav"></audio>
+    <audio id="audio2" src="audio\CamarasTermicas.mp3"></audio>
+    <audio id="audio3" src="audio\CamarasTermicas.mp3"></audio>
   </div>
 
   <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector
@@ -392,23 +265,13 @@ El nuevo modelo de negocio consistió en crear la versión de negocio digital qu
       </a-asset-item>
     </a-assets>
 
-    <a-assets>
-      <a-asset-item id="mono-carrito" src="models\mono-carrito.glb">
-      </a-asset-item>
-    </a-assets>
-
-    <a-assets>
-      <a-asset-item id="producto" src="models\producto.glb">
-      </a-asset-item>
-    </a-assets>
-
     <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;"
       id="markerA">
 
       <a-entity light="type: ambient; color: #CCC; intensity: 1"></a-entity>
-      <a-entity light="type: point; intensity: 1.5; distance: 100; decay: 7" position="-2 0.5 0"></a-entity>
-      <a-entity light="type: point; intensity: 1.5; distance: 100; decay: 7" position="0 0.5 0"></a-entity>
-      <a-entity light="type: point; intensity: 1.5; distance: 100; decay: 7" position="2 0.5 0"></a-entity>
+      <a-entity light="type: point; intensity: 0.2; distance: 70; decay: 5" position="-2 0.5 0"></a-entity>
+      <a-entity light="type: point; intensity: 0.2; distance: 70; decay: 5" position="0 0.5 0"></a-entity>
+      <a-entity light="type: point; intensity: 0.2; distance: 70; decay: 5" position="2 0.5 0"></a-entity>
 
       <a-entity id="bowser-model" gltf-model="#bowser" position="0 0 0" scale="0.4 0.4 0.4" class="clickable"
         gesture-handler visible="true">
@@ -435,16 +298,8 @@ El nuevo modelo de negocio consistió en crear la versión de negocio digital qu
         visible="false" animation-mixer>
       </a-entity>
 
-      <a-entity id="m-mono-disp" gltf-model="#mono-disp" position="0 0 0" scale=".4 .4 .4" class="clickable"
-        gesture-handler visible="false" animation-mixer>
-      </a-entity>
-
-      <a-entity id="m-mono-carrito" gltf-model="#mono-carrito" position="0 0 0" scale=".4 .4 .4" class="clickable"
-        gesture-handler visible="false" animation-mixer>
-      </a-entity>
-
-      <a-entity id="m-producto" gltf-model="#producto" position="0 0 0" scale=".4 .4 .4" class="clickable"
-        gesture-handler visible="false" animation-mixer>
+      <a-entity id="m-mono-disp" gltf-model="#mono-disp" position="0 0 0" scale=".4 .4 .4" class="clickable" gesture-handler
+        visible="false" animation-mixer>
       </a-entity>
 
 
@@ -543,23 +398,19 @@ El nuevo modelo de negocio consistió en crear la versión de negocio digital qu
         });
 
 
-      document
+        document
         .querySelector(".say-hi-button3")
         .addEventListener("click", function () {
           const element = document.querySelector("#mode-oficina-01");
           const element2 = document.querySelector("#m-mono-04");
           const element3 = document.querySelector("#m-mono-disp");
-          const element4 = document.querySelector("#m-mono-carrito");
-          const element5 = document.querySelector("#m-producto");
-
+    
           if (element.object3D.visible === true) {
 
             element3.object3D.visible = true;
-            element4.object3D.visible = true;
-            element5.object3D.visible = true;
             element.object3D.visible = false;
-            element2.object3D.visible = false;
-
+            element3.object3D.visible = false;
+            
           }
         });
     };
@@ -579,82 +430,36 @@ El nuevo modelo de negocio consistió en crear la versión de negocio digital qu
     }
   </script>
   <script>
-    function play2() {
-      var audio = document.getElementById("audio2");
-      if (audio.paused)
-        audio.play();
-      else
-        audio.pause();
-
-    }
-  </script>
-  <script>
-    function play3() {
-      var audio = document.getElementById("audio3");
-      if (audio.paused)
-        audio.play();
-      else
-        audio.pause();
-
-    }
-  </script>
-  <script>
-    function siguiente() {
+    function siguiente(){     
       var e = document.getElementById("bs0");
-      var f = document.getElementById("bs");
+      var f = document.getElementById("bs"); 
       var g = document.getElementById("bs-2");
-      var h = document.getElementById("bs-3");
-      var i = document.getElementById("b-modal-01");
-      var j = document.getElementById("b-modal-02");
-      e.style.display = 'none';
-      f.style.display = 'none';
-      i.style.display = 'none';
-      g.classList.remove('hide');
-      g.classList.add('col-sm');
-      h.classList.remove('hide');
-      h.classList.add('col-sm');
-      j.classList.remove('hide');
-      j.classList.add('buttons-modal');
-
-      var audioh1 = document.getElementById("audio");
-      if (audioh1.play)
-        audioh1.pause();
-
+      var h = document.getElementById("bs-3");      
+          e.style.display = 'none';  
+          f.style.display = 'none'; 
+          g.classList.remove('hide'); 
+          g.classList.add('col-sm'); 
+          h.classList.remove('hide'); 
+          h.classList.add('col-sm');     
+      
     }
   </script>
 
-  <script>
-    function siguiente2() {
-      var e = document.getElementById("bs-2");
-      var f = document.getElementById("bs-3");
-      var g = document.getElementById("bs-4");
-      var h = document.getElementById("bs-5");
-      var i = document.getElementById("b-modal-02");
-      var j = document.getElementById("b-modal-03");
-      e.style.display = 'none';
-      f.style.display = 'none';
-      i.style.display = 'none';
-      g.classList.remove('hide');
-      g.classList.add('col-sm');
-      h.classList.remove('hide');
-      h.classList.add('col-sm');
-      j.classList.remove('hide');
-      j.classList.add('buttons-modal');
-
-      var audioh1 = document.getElementById("audio2");
-      if (audioh1.play)
-        audioh1.pause();
-
-    }
-  </script>
-
-  <script>
-    function cerrar(){
-      setTimeout (window.close, 5000);
-      document.getElementsByTagName ('html') [0] .remove ();
-      window.close();
-    }
-  </script>
+<script>
+  function siguiente2(){     
+    var e = document.getElementById("bs-2");
+    var f = document.getElementById("bs-3"); 
+    var g = document.getElementById("bs-4");
+    var h = document.getElementById("bs-5");      
+        e.style.display = 'none';  
+        f.style.display = 'none'; 
+        g.classList.remove('hide'); 
+        g.classList.add('col-sm'); 
+        h.classList.remove('hide'); 
+        h.classList.add('col-sm');     
+    
+  }
+</script>
 
 </body>
 
